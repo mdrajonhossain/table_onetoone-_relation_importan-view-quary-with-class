@@ -1,0 +1,36 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sdfsdsd</title>
+</head>
+<body>
+
+
+<form method="POST">
+ 	{% csrf_token %}
+			<select name="person_id">
+				{% for data in data %}
+			  <option value="{{ data.id}}">{{ data.name}}</option>
+				{% endfor %}
+			</select>
+<br>
+ 	<span>Name:</span>
+ 	<input type="text" name="product_name"><br>
+ 	<span>Father Name:</span>
+ 	<input type="text" name="product_code"><br>
+ 	<span>Mother Name:</span>
+ 	<input type="text" name="product_address"><br>
+ 
+ <input type="submit" value="save">
+ <input type="reset" value="Reset">
+</form>
+
+
+
+
+<a href="{%url 'all_urls' %}">second</a>
+
+
+</body>
+</html>

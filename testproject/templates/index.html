@@ -1,0 +1,30 @@
+ 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sdfsdsd</title>
+</head>
+<body>
+ 
+
+ <form method="POST">
+ 	{% csrf_token %}
+ 	<span>Name:</span>
+ 	<input type="text" name="name"><br>
+ 	<span>Father Name:</span>
+ 	<input type="text" name="father_name"><br>
+ 	<span>Mother Name:</span>
+ 	<input type="text" name="mother_name"><br>
+ 
+ <input type="submit" value="save">
+ <input type="reset" value="Reset">
+</form>
+
+
+<a href="{%url 'seconfile' %}">second</a>
+
+
+
+</body>
+</html>
