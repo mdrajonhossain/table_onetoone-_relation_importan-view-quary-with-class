@@ -9,8 +9,6 @@ from django.http import HttpResponseRedirect
 
 
 class URLListiews(View):
-
-
 	def get(self, request, *args, **kwargs): 
 		return render(request, 'index.html')
 
@@ -21,24 +19,18 @@ class URLListiews(View):
 			Person.objects.create(**data)
 		return HttpResponseRedirect('nextfilenex') 
 
-
 class NextListiews(View):
 	def get(self, request, *args, **kwargs):
 		context ={'data':Person.objects.all()} 
 		return render(request, 'stdform.html',context)
 
-
 	def post(self, request, *args, **kwargs):
 		person_id = request.POST.get('person_id')
 		person = Person.objects.get(id=person_id)
-
 		form = CatagoryiesForm(request.POST)
 		if form.is_valid():
 			data = form.cleaned_data
 			data['person'] = person
-
 			Catagoryies.objects.create(**data)
-
-
 		return HttpResponseRedirect('/')
  
